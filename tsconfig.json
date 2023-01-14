@@ -6,8 +6,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "moduleResolution": "NodeNext"
+    "moduleResolution": "NodeNext",
+    "sourceMap": true,
   },
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"],
   "ts-node": {
 	"esm": true
  },

@@ -42,11 +42,10 @@ describe('CRUD API tests', () => {
     expect(responseBody.message).toBe(INVALID_USER_ID);
   });
   test("DELETE / receive corresponding message and right status code if id === userId doesn't exist", async () => {
-	const fakeId = uuidv4()
-	const response = await runServer.delete(`/api/users/${fakeId}`);
-	const responseBody: errorType = JSON.parse(response.text);
-	expect(response.status).toBe(404);
-	expect(responseBody.message).toBe(USER_NOT_FOUND);
- });
- 
+    const fakeId = uuidv4();
+    const response = await runServer.delete(`/api/users/${fakeId}`);
+    const responseBody: errorType = JSON.parse(response.text);
+    expect(response.status).toBe(404);
+    expect(responseBody.message).toBe(USER_NOT_FOUND);
+  });
 });

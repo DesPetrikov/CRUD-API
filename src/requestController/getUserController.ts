@@ -6,11 +6,10 @@ export const getUserController = (userId: string, usersList: userType[]) => {
   if (!validate(userId)) {
     throw new Error(INVALID_USER_ID);
   }
+
   const requiredUser = usersList.find((user) => user.id === userId);
-  
   if (requiredUser) {
     return requiredUser;
-  } else {
-    throw new Error(USER_NOT_FOUND);
   }
+  throw new Error(USER_NOT_FOUND);
 };

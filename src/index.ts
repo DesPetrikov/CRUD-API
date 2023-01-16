@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 4000;
 
 const usersList: userType[] = [];
 
-const server = http.createServer(
+export const server = http.createServer(
   async (req: IncomingMessage, res: ServerResponse) => {
     res.setHeader('Content-Type', 'application/json');
 
@@ -37,6 +37,7 @@ const server = http.createServer(
             const newUser = { id: uuidv4(), username, age, hobbies };
             usersList.push(newUser);
             responseBody = newUser;
+            statusCode = 201;
           } else {
             throw new Error(INCONSISTENT_DATA);
           }

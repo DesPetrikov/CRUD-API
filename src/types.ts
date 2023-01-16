@@ -4,3 +4,8 @@ export type userType = {
 	age: number;
 	hobbies: string[]
 }
+
+export type errorType = {
+	code: number,
+	message: string,
+}

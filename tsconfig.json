@@ -10,7 +10,7 @@
     "skipLibCheck": true,
     "moduleResolution": "NodeNext",
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "src/tests"],
   "exclude": ["node_modules"],
   "ts-node": {
 	"esm": true

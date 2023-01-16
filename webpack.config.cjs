@@ -4,13 +4,27 @@ module.exports = {
   entry: {
     main: path.resolve(__dirname, './src/index.ts'),
   },
+   target: 'node',
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'main.bundle.cjs',
     clean: true,
   },
-  resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  module: {
+    rules: [
+      {
+        test: /\.ts?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
-  target: 'node',
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"],
+    extensionAlias: {
+      '.js': ['.ts', '.js'],
+      '.mjs': ['.mts', '.mjs'],
+    },
+}
+ 
 };

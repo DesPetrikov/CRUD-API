@@ -4,7 +4,7 @@ import { server } from '../index.js';
 import { errorType, userType } from '../types.js';
 import { v4 as uuidv4 } from 'uuid';
 
-describe('Server CRUD tests', () => {
+describe('CRUD API tests', () => {
   afterAll((done) => {
     server.close();
     done();
